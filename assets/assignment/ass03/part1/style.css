@@ -1,0 +1,155 @@
+/*:root{*/
+/*    overflow: hidden;*/
+/*}*/
+.main-inner{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid red;
+}
+
+.sub-square{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    border: 1px solid red;
+}
+
+.sub-sq-1{
+    top: 0;
+    right: 0;
+    background-color: red;
+}
+
+.sub-sq-2{
+    top: 0;
+    left: 0;
+    background-color: green;
+}
+
+.sub-sq-3{
+    bottom: 0;
+    right: 0;
+    background-color: deeppink;
+}
+
+.sub-sq-4{
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+}
+
+.sub-center-square{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: white;
+}
+
+.sub-center-circle{
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 100%;
+    background-color: #ff0000;
+}
+
+.inner-circle{
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    border-radius: 100%;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.inner-square{
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    background-color: red;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.corner-top-left{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 100%;
+    background-color: white;
+}
+
+.corner-top-right{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 100%;
+    background-color: white;
+}
+
+.corner-bottom-right{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 100%;
+    background-color: white;
+}
+
+.corner-bottom-left{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 100%;
+    background-color: white;
+}
+
+.Semicircle{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    background-color: white;
+}
+.Semicircle-top{
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+.Semicircle-bottom{
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}

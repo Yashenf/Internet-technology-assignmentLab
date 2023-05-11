@@ -1,0 +1,462 @@
+<!--
+    Created By : @yash
+                 4/26/2023 , Wednesday
+                 12:47 PM
+    Project :book_store
+    Contact: contact.yashen@gmail.com
+-->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <title>BookStore</title>
+</head>
+
+<body onload="toDashboard()">
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-body-secondary">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="../assets/img/pos/pos-logo.png" alt="logo" style="width: 75px; height: 50px">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="toOrderPage()" target="frame">Orders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="toCustomerPage()" target="frame">Customers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="toProductPage()" target="frame">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="toPlaceOrderPage()" target="frame">Place Order</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!--        <iframe style="width: 100%; height: calc(100vh - 70px)" src="orders.html" class="container-fluid" name="frame"></iframe>-->
+
+    <section id="customer">
+        <div class="top-container container-fluid mt-2">
+            <div class="row d-flex justify-content-evenly">
+                <h2 class="col-6">Manage Customers</h2>
+                <div class="col-2 btn btn-primary col-4 col-md-3 col-lg-2">Add Customer +</div>
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">Customer ID</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput1" placeholder="Cus-001">
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <label for="exampleFormControlInput2" class="form-label">Name</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput2" placeholder="Amal Perera">
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <label for="exampleFormControlInput3" class="form-label">Email</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput3" placeholder="Amal@gmail.com">
+                </div>
+
+            </div>
+
+            <div class="row mt-3 d-flex justify-content-evenly">
+                <div class="form-outline col-6">
+                    <input type="search" class="form-control" id="datatable-search-input-customer"
+                           placeholder="Search Customer">
+                </div>
+                <div class="btn btn-warning col-6 col-md-3 col-lg-2">Update Customer</div>
+            </div>
+
+            <div class="col-10 border border-dark mt-5 mx-auto"></div>
+
+            <div class="row col-12 mx-auto mt-5">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>C-001</td>
+                        <td>Amal Perera</td>
+                        <td>Amal@gmail.com</td>
+                        <td>
+                            <div class="btn btn-danger">delete</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>C-001</td>
+                        <td>Amal Perera</td>
+                        <td>Amal@gmail.com</td>
+                        <td>
+                            <div class="btn btn-danger">delete</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>C-001</td>
+                        <td>Amal Perera</td>
+                        <td>Amal@gmail.com</td>
+                        <td>
+                            <div class="btn btn-danger">delete</div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="orders">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-around mt-3">
+
+                <div class="card text-bg-warning mb-3 col-12 col-md-6 col-lg-4" style="max-width: 18rem;">
+                    <div class="card-header">2023-04-26</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Total Revenue</h5>
+                        <h2>$ 150.00</h2>
+                    </div>
+                </div>
+
+                <div class="card text-bg-success mb-3 col-12 col-md-6 col-lg-4" style="max-width: 18rem;">
+                    <div class="card-header">Orders</div>
+                    <div class="card-body">
+                        <h5 class="card-title">No of orders in today</h5>
+                        <h2>27</h2>
+                    </div>
+                </div>
+
+                <div class="card text-bg-primary mb-3 col-12 col-md-6 col-lg-4" style="max-width: 18rem;">
+                    <div class="card-header">Online*</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cashier</h5>
+                        <h2>Nimal Perera</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-outline mb-4 mx-auto mt-5 col-6">
+                <input type="search" class="form-control" id="datatable-search-input" placeholder="Search Order">
+            </div>
+        </div>
+
+        <div class="row col-10 mx-auto">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Total ($)</th>
+                    <th scope="col">Show Order</th>
+                    <th scope="col">Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Ord-001</td>
+                    <td>Nimal Mendis</td>
+                    <td>04.27.2023</td>
+                    <td>127.99</td>
+                    <td>
+                        <div class="btn btn-success">view</div>
+                    </td>
+                    <td>
+                        <div class="btn btn-danger">delete</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Ord-001</td>
+                    <td>Nimal Mendis</td>
+                    <td>04.27.2023</td>
+                    <td>127.99</td>
+                    <td>
+                        <div class="btn btn-success">view</div>
+                    </td>
+                    <td>
+                        <div class="btn btn-danger">delete</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Ord-001</td>
+                    <td>Nimal Mendis</td>
+                    <td>04.27.2023</td>
+                    <td>127.99</td>
+                    <td>
+                        <div class="btn btn-success">view</div>
+                    </td>
+                    <td>
+                        <div class="btn btn-danger">delete</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="placeOrder">
+        <div class="container-fluid">
+
+            <div class="row">
+                <h2>PlaceOrder</h2>
+            </div>
+
+            <div class="row d-flex justify-content-evenly">
+                <div class="card col-12 col-md-6 col-lg-3 d-flex align-items-center justify-content-evenly border border-dark mb-3">
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput1po" class="form-label">Order ID</label>
+                        <input type="text" class="form-control " id="exampleFormControlInput1po" placeholder="Ord-001">
+                    </div>
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput2po" class="form-label">Customer Id</label>
+                        <input type="text" class="form-control " id="exampleFormControlInput2po" placeholder="Ord-001">
+                    </div>
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput3po" class="form-label">Customer</label>
+                        <input type="text" class="form-control mb-4 " id="exampleFormControlInput3po"
+                               placeholder="Amal Perera">
+                    </div>
+
+                </div>
+
+                <div class="card col-12 col-md-6 col-lg-3 d-flex align-items-center justify-content-evenly border border-dark mb-3">
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput4" class="form-label">Product Id</label>
+                        <input type="text" class="form-control " id="exampleFormControlInput4" placeholder="P-001">
+                    </div>
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput5" class="form-label">Product</label>
+                        <input type="text" class="form-control " id="exampleFormControlInput5"
+                               placeholder="Harry Potter 01">
+                    </div>
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput6" class="form-label">Qty On Hand</label>
+                        <input type="text" class="form-control mb-4 " id="exampleFormControlInput6" placeholder="20">
+                    </div>
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput7" class="form-label">Qty</label>
+                        <input type="text" class="form-control mb-4 " id="exampleFormControlInput7" placeholder="1">
+                    </div>
+
+                </div>
+
+                <div class="card col-12 col-md-6 col-lg-3 d-flex align-items-center justify-content-evenly border border-dark mb-3">
+
+                    <h3>Total is : $ <span class="price">149.99</span></h3>
+
+                    <div class="col-12 ">
+                        <label for="exampleFormControlInput8" class="form-label">Discount</label>
+                        <input type="text" class="form-control " id="exampleFormControlInput8" placeholder="$ 9.99">
+                    </div>
+
+                    <h2 class="text-danger">SubTotal is : $ <span class="sub-tot">139.00</span></h2>
+
+                    <div class="row col-12 d-flex justify-content-evenly mt-3">
+                        <div class="btn btn-warning col-3">Add +</div>
+                        <div class="btn btn-success col-4">Place Order</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row col-10 mx-auto mt-5">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Clean Architecture</td>
+                        <td>1</td>
+                        <td>87.00</td>
+                        <td>
+                            <div class="btn btn-danger">remove</div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Clean Architecture</td>
+                        <td>1</td>
+                        <td>87.00</td>
+                        <td>
+                            <div class="btn btn-danger">remove</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Clean Architecture</td>
+                        <td>1</td>
+                        <td>87.00</td>
+                        <td>
+                            <div class="btn btn-danger">remove</div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="product">
+        <div class="top-container container-fluid mt-2">
+            <div class="row d-flex justify-content-evenly">
+                <h2 class="col-6">Manage Products</h2>
+                <div class="col-2 btn btn-primary col-4 col-md-3 col-lg-2">Add Product +</div>
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <label for="exampleFormControlInput1p" class="form-label">Product ID</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput1p" placeholder="P-001">
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-8 mb-3">
+                    <label for="exampleFormControlInput2p" class="form-label">Description</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput2p"
+                           placeholder="Harry Potter 01">
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <label for="exampleFormControlInput3p" class="form-label">QTY</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput3p" placeholder="25">
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <label for="exampleFormControlInput4p" class="form-label">QTY On Hand</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput4p" placeholder="22">
+                </div>
+
+            </div>
+
+            <div class="row mt-3 d-flex justify-content-evenly">
+                <div class="form-outline col-6">
+                    <input type="search" class="form-control" id="datatable-search-input-product"
+                           placeholder="Search Product">
+                </div>
+                <div class="btn btn-warning col-6 col-md-3 col-lg-2">Update Product*</div>
+            </div>
+
+            <div class="col-10 border border-dark mt-5 mx-auto"></div>
+
+            <div class="row col-12 mx-auto mt-5">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Qty On Hand</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>P-001</td>
+                        <td>Harry potter half blood prince</td>
+                        <td>150</td>
+                        <td>87</td>
+                        <td>
+                            <div class="btn btn-danger">delete</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>P-001</td>
+                        <td>Harry potter half blood prince</td>
+                        <td>150</td>
+                        <td>87</td>
+                        <td>
+                            <div class="btn btn-danger">delete</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>P-001</td>
+                        <td>Harry potter half blood prince</td>
+                        <td>150</td>
+                        <td>87</td>
+                        <td>
+                            <div class="btn btn-danger">delete</div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous">
+
+</script>
+
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>
