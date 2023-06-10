@@ -1,25 +1,79 @@
-<!--
-    Created By : @yash
-                 5/27/2023 , Saturday
-                 08:44 AM
-    Project :Assignments lab
-    Contact: contact.yashen@gmail.com
--->
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 98vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>$Title$</title>
-    </head>
-    
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-    
+        .box {
+            width: 70px;
+            height: 20px;
+            margin: 10px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<audio src="./audio/Knight%20Rider%20Sms%20!%20Knight%20Rider%20!%20Theme.mp3" id="music"></audio>
+<section class="container">
+    <div>
+        <button class="start">start</button>
+        <button class="end">end</button>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var lightNumber = 0;
+    var ligts = $('.box');
+    var direction = 'RIGHT';
+    var intervalId;
+    console.log(ligts);
+    function updateLights() {
+        $('.box').css({background: 'white'});
+        ligts[lightNumber].style.background = 'red';
+        if (lightNumber > 0) {
+            ligts[lightNumber - 1].style.background = 'pink';
+        }
+        if (lightNumber < 6) {
+            ligts[lightNumber + 1].style.background = 'pink';
+        }
+        if (lightNumber === 6) {
+            direction = 'LEFT'
+        }
+        if (lightNumber === 0) {
+            direction = 'RIGHT'
+        }
+        if (direction === 'RIGHT') {
+            lightNumber++;
+        } else {
+            lightNumber--;
+        }
+    }
+    $('.start').click(function () {
+        // $('music')[0].play();
+        intervalId = setInterval(updateLights, 50);
+    });
+
+    $('.end').click(function () {
+        // $('music')[0].pause();
+        clearInterval(intervalId)
+    })
+
+</script>
+</body>
 </html>

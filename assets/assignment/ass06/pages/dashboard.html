@@ -65,24 +65,27 @@
         <div class="top-container container-fluid mt-2">
             <div class="row d-flex justify-content-evenly">
                 <h2 class="col-6">Manage Customers</h2>
-                <div class="col-2 btn btn-primary col-4 col-md-3 col-lg-2">Add Customer +</div>
+                <div class="col-2 btn btn-primary col-4 col-md-3 col-lg-2" id="saveCustomerBtn" onclick="saveCustomer()">Add Customer +</div>
             </div>
 
             <div class="row mt-3">
 
                 <div class="col-12 col-md-6 col-lg-4">
-                    <label for="exampleFormControlInput1" class="form-label">Customer ID</label>
-                    <input type="text" class="form-control " id="exampleFormControlInput1" placeholder="Cus-001">
+                    <label for="customer_id" class="form-label">Customer ID</label>
+                    <input type="text" class="form-control " id="customer_id" placeholder="Cus-001">
+                    <p><small class="text-danger p-1" id="cusIdErr"></small></p>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                    <label for="exampleFormControlInput2" class="form-label">Name</label>
-                    <input type="text" class="form-control " id="exampleFormControlInput2" placeholder="Amal Perera">
+                    <label for="customer_name" class="form-label">Name</label>
+                    <input type="text" class="form-control " id="customer_name" placeholder="Amal Perera">
+                    <p><small class="text-danger p-1" id="cusNameErr"></small></p>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                    <label for="exampleFormControlInput3" class="form-label">Email</label>
-                    <input type="text" class="form-control " id="exampleFormControlInput3" placeholder="Amal@gmail.com">
+                    <label for="customer_email" class="form-label">Email</label>
+                    <input type="text" class="form-control " id="customer_email" placeholder="Amal@gmail.com">
+                    <p><small class="text-danger p-1" id="cusEmailErr"></small></p>
                 </div>
 
             </div>
@@ -92,7 +95,7 @@
                     <input type="search" class="form-control" id="datatable-search-input-customer"
                            placeholder="Search Customer">
                 </div>
-                <div class="btn btn-warning col-6 col-md-3 col-lg-2">Update Customer</div>
+                <div class="btn btn-warning col-6 col-md-3 col-lg-2" onclick="updateCustomer()">Update Customer</div>
             </div>
 
             <div class="col-10 border border-dark mt-5 mx-auto"></div>
@@ -108,34 +111,8 @@
                         <th scope="col">Options</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>C-001</td>
-                        <td>Amal Perera</td>
-                        <td>Amal@gmail.com</td>
-                        <td>
-                            <div class="btn btn-danger">delete</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>C-001</td>
-                        <td>Amal Perera</td>
-                        <td>Amal@gmail.com</td>
-                        <td>
-                            <div class="btn btn-danger">delete</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>C-001</td>
-                        <td>Amal Perera</td>
-                        <td>Amal@gmail.com</td>
-                        <td>
-                            <div class="btn btn-danger">delete</div>
-                        </td>
-                    </tr>
+                    <tbody id="customerTable">
+
                     </tbody>
                 </table>
             </div>
