@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main {
+            width: 100%;
+            height: 40%;
+            display: flex;
+        }
+
+        .man-box {
+            flex: 1;
+            /*width: 200px;*/
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            position: relative;
+            background-image: url("./assets/berjalan-walking.gif");
+            background-size: cover;
+            background-position: 100px;
+        }
+
+        .office {
+            flex: 2;
+            background-image: url("assets/housedrib.gif");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .num-box {
+
+            width: 20%;
+            height: 10%;
+            border-radius: 50%;
+            background-color: deepskyblue;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        button{
+            margin-top: 20px;
+        }
+    </style>
+    <title>Assignment-8 part 01</title>
+</head>
+<body>
+<!---------------------------------------------------------------->
+<main>
+    <div class="man-box" id="man-1">
+        <div class="num-box" id="num-1">a</div>
+    </div>
+    <div class="man-box" id="man-2">
+        <div class="num-box" id="num-2">b</div>
+    </div>
+    <div class="man-box" id="man-3">
+        <div class="num-box" id="num-3">c</div>
+    </div>
+    <div class="man-box" id="man-4">
+        <div class="num-box" id="num-4">d</div>
+    </div>
+    <div class="man-box" id="man-5">
+        <div class="num-box" id="num-5">e</div>
+    </div>
+    <div class="man-box" id="man-6">
+        <div class="num-box" id="num-6">f</div>
+    </div>
+    <div class="office"></div>
+</main>
+<button id="start">Start</button>
+<button id="end">Start</button>
+<!---------------------------------------------------------------->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
+    let intervalMethod;
+    $('#start').on('click',()=>{
+        intervalMethod= setInterval(changeLetter,2000);
+    });
+
+    $('#end').on('click',()=>{
+        clearInterval(intervalMethod);
+    });
+    const changeLetter= () => {
+        const lastElement = letters.pop();
+        letters.unshift(lastElement);
+        $('#num-1').text(letters[0]);
+        $('#num-2').text(letters[1]);
+        $('#num-3').text(letters[2]);
+        $('#num-4').text(letters[3]);
+        $('#num-5').text(letters[4]);
+        $('#num-6').text(letters[5]);
+    };
+</script>
+</body>
+</html>
